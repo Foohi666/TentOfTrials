@@ -15,6 +15,29 @@
 
 ## Monitoring
 
+## Backend Runtime Configuration
+
+The Rust backend reads a small set of environment variables at startup. These
+values override the safe local defaults and, for host/port, override the same
+service fields loaded from the optional TOML config file.
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `TOT_BACKEND_HOST` | `0.0.0.0` | Bind address used by the backend service. Empty values are rejected. |
+| `TOT_BACKEND_PORT` | `8080` | TCP port used by the backend service. Must be between `1` and `65535`. |
+| `TOT_LOG_LEVEL` | `info` | Backend log filter when `RUST_LOG` is not set. Supported values: `trace`, `debug`, `info`, `warn`, `error`. |
+| `TOT_ENABLE_EXPERIMENTAL` | `false` | Enables guarded experimental backend behavior. Accepted values: `true`, `false`, `1`, `0`, `yes`, `no`, `on`, `off`. |
+
+Example:
+
+```bash
+TOT_BACKEND_HOST=127.0.0.1 \
+TOT_BACKEND_PORT=9090 \
+TOT_LOG_LEVEL=debug \
+TOT_ENABLE_EXPERIMENTAL=true \
+cargo run --bin tent-backend
+```
+
 ### Health Check Endpoints
 
 Each service exposes a health check endpoint:
