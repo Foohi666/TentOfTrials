@@ -1,0 +1,30 @@
+﻿{
+    "generated_at":  "2026-06-18T05:13:41.1226823Z",
+    "commit":  "6affd3a9",
+    "diagnostic_logd":  [
+                            "diagnostic/build-6affd3a9-part001.logd",
+                            "diagnostic/build-6affd3a9-part002.logd",
+                            "diagnostic/build-6affd3a9-part003.logd",
+                            "diagnostic/build-6affd3a9-part004.logd",
+                            "diagnostic/build-6affd3a9-part005.logd"
+                        ],
+    "diagnostic_logd_error":  null,
+    "message_blocker":  null,
+    "chunked":  true,
+    "chunk_size_bytes":  41943040,
+    "password":  "8ddbc2d274d796940d8a",
+    "decrypt_command":  "encryptly unpack diagnostic/build-6affd3a9.logd \u003coutdir\u003e --password 8ddbc2d274d796940d8a",
+    "total_modules":  1,
+    "passed":  1,
+    "failed":  0,
+    "modules":  [
+                    {
+                        "output":  "cargo fmt passed; cargo test config::tests passed",
+                        "status":  "PASS",
+                        "name":  "backend-config",
+                        "elapsed_seconds":  0,
+                        "artifact":  null
+                    }
+                ],
+    "pr_note":  "Include the encrypted diagnostic logd artifact chunks: diagnostic/build-6affd3a9-part001.logd, diagnostic/build-6affd3a9-part002.logd, diagnostic/build-6affd3a9-part003.logd, diagnostic/build-6affd3a9-part004.logd, diagnostic/build-6affd3a9-part005.logd. The encrypted .logd is the required diagnostic content for PR review; this JSON file is metadata. Maintainers may ask you to remove these diagnostic artifacts before merging."
+}
